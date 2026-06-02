@@ -1,0 +1,101 @@
+{
+  "mlp": {
+    "test_accuracy": 0.7586206896551724,
+    "test_auc_roc": 0.8559349593495935,
+    "test_f1_macro": 0.7135802469135802,
+    "test_precision": 0.7241379310344828,
+    "test_recall": 0.5121951219512195
+  },
+  "cnn": {
+    "test_accuracy": 0.8269230769230769,
+    "test_auc_roc": 0.9590948937102783,
+    "test_f1_macro": 0.790562378797673
+  },
+  "rnn": {
+    "models": {
+      "RNN": {
+        "test_accuracy": 0.8,
+        "test_f1_macro": 0.7333,
+        "test_auc_roc": 1.0,
+        "train_time_sec": 6.5,
+        "n_params": 597637,
+        "epochs_trained": 5,
+        "best_val_acc": 0.8
+      },
+      "LSTM": {
+        "test_accuracy": 1.0,
+        "test_f1_macro": 1.0,
+        "test_auc_roc": 1.0,
+        "train_time_sec": 17.4,
+        "n_params": 2373253,
+        "epochs_trained": 5,
+        "best_val_acc": 1.0
+      },
+      "GRU": {
+        "test_accuracy": 1.0,
+        "test_f1_macro": 1.0,
+        "test_auc_roc": 1.0,
+        "train_time_sec": 8.4,
+        "n_params": 1781381,
+        "epochs_trained": 5,
+        "best_val_acc": 1.0
+      }
+    },
+    "best_model": "LSTM",
+    "previous_buggy": {
+      "GRU_8epochs": 0.4982686980609418,
+      "note": "Bug: 8 epochs, pas de scheduler — corrige dans generate_part3.py"
+    }
+  },
+  "hybrid": {
+    "cnn_lstm": {
+      "accuracy": 0.6,
+      "auc": 0.6844,
+      "f1_macro": 0.5895,
+      "n_params": 336961,
+      "train_time_sec": 11.6
+    },
+    "cnn_attention": {
+      "accuracy": null,
+      "auc": null,
+      "f1_macro": null,
+      "n_params": null,
+      "note": "CNN + Cross-Attention (image + texte)"
+    },
+    "cnn_baseline": {
+      "accuracy": 0.58,
+      "auc": 0.5733,
+      "f1_macro": 0.5659,
+      "n_params": 101441,
+      "train_time_sec": 2.5
+    }
+  },
+  "ablation": {
+    "mlp": [],
+    "cnn": [],
+    "rnn": [],
+    "note": "A remplir apres execution de part6_ablation.ipynb"
+  },
+  "xai": {
+    "shap_features_ranked": [
+      "Glucose",
+      "BMI",
+      "Age",
+      "DiabetesPedigreeFunction",
+      "Insulin",
+      "BloodPressure",
+      "SkinThickness",
+      "Pregnancies"
+    ],
+    "gradcam_paths": [],
+    "lime_weights": [],
+    "note": "A remplir apres execution de part4_agents_xai.ipynb"
+  },
+  "project_info": {
+    "institution": "EMSI Casablanca",
+    "year": "2025-2026",
+    "seed": 42,
+    "framework": "PyTorch uniquement",
+    "last_updated": "2026-05-28"
+  }
+}
